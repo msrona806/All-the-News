@@ -51,35 +51,44 @@ app.get("/", function (req, res) {
 // GET route for scraping the National MS Society website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
-  axios.get("https://www.nationalmssociety.org/").then(function(response) {
+  // axios.get("https://www.nationalmssociety.org/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
 
-		// var url = "https://www.nationalmssociety.org/"
+		var url = "https://www.nationalmssociety.org/"
 
-		// request(url, function(err, resp, html) {
+		request(url, function(err, resp, html) {
 			// Load the html body from request into cheerio
-			var $ = cheerio.load(response.data);
-			$(".article-item").each(function(i, body) {
-				var result = {};
+			var $ = cheerio.load(html);
 
-				// Add the text and href of every link, and save them as properties of the result object
-				result.title = $(this)
-					.children("a")
-					.text();
-				result.link = $(this)
-					.children("a")
-					.attr("href");
+			$("article.article-item").each(function(i, body) {
+				var title = $(body).find("h3").text();
+				var link = $(body).children().attr("href");
+			
+		
+				console.log(title);
+				console.log(link);
+			
+			
+				// 	var result = {};
+
+			// 	// Add the text and href of every link, and save them as properties of the result object
+			// 	result.title = $(this)
+			// 		.children("a")
+			// 		.text();
+			// 	result.link = $(this)
+			// 		.children("a")
+			// 		.attr("href");
 
 					// Create a new Article using the `result` object built from scraping
-					db.Article.create(result)
-						.then(function(dbArticle) {
-							// View the added result in the console
-							console.log(dbArticle);
-        })
-        .catch(function(err) {
-          // If an error occurred, send it to the client
-          return res.json(err);
-        });
+				// 	db.Article.create(result)
+				// 		.then(function(dbArticle) {
+				// 			// View the added result in the console
+				// 			console.log(dbArticle);
+        // })
+        // .catch(function(err) {
+        //   // If an error occurred, send it to the client
+        //   return res.json(err);
+        // });
     });
 
     // If we were able to successfully scrape and save an Article, send a message to the client
@@ -88,20 +97,20 @@ app.get("/scrape", function(req, res) {
 });
 
 // Route for getting all Articles from the db
-app.get("/articles", function(req, res) {
+// app.get("/articles", function(req, res) {
   // Grab every document in the Articles collection
-  db.Article.find({})
-    .then(function(dbArticle) {
-      // If we were able to successfully find Articles, send them back to the client
-      res.json(dbArticle);
-    })
-    .catch(function(err) {
+  // db.Article.find({})
+    // .then(function(dbArticle) {
+    //   // If we were able to successfully find Articles, send them back to the client
+    //   res.json(dbArticle);
+    // })
+    // .catch(function(err) {
       // If an error occurred, send it to the client
-			res.json(err);
+// 			res.json(err);
 			
-			res.send("Scrape Complete");
-    });
-});
+// 			res.send("Scrape Complete");
+//     });
+// });
 
 
 
