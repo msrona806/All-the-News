@@ -1,0 +1,32 @@
+{
+  "name": "all-the-news",
+  "version": "1.0.0",
+  "description": "all in the news app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msrona806/All-the-News.git"
+  },
+  "keywords": [
+    "mongoose",
+    "cheerio"
+  ],
+  "author": "Sharona Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msrona806/All-the-News/issues"
+  },
+  "homepage": "https://github.com/msrona806/All-the-News#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.0.3",
+    "path": "^0.12.7",
+    "request": "^2.83.0"
+  }
+}
