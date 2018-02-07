@@ -5,7 +5,7 @@ A web app that lets users view and leave comments on the latest news about multi
 
 ### NPM packages used:
 
-	1. [body-parser](https://www.npmjs.com/package/body-parser)
+  1. [body-parser](https://www.npmjs.com/package/body-parser)
   2. [express](https://www.npmjs.com/package/express)
   3. [express-handlebars](https://www.npmjs.com/package/express-handlebars)
   4. [request](https://www.npmjs.com/package/request)
