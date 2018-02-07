@@ -13,23 +13,25 @@
   <!-- Google Fonts family -->
 
   <!-- CSS sheet -->
-  <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+  {{!--
+  <link rel="stylesheet" type="text/css" href="assets/style/style.css"> --}}
 
   <!-- Materialize library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> --}}
 
   <!-- JavaScript for Materialize-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> --}}
 
 </head>
 
 <body>
- 
+
   <!-- TOP OF THE PAGE -->
   <div class="container">
-    <div class = "row" id = "topHeading">
-      <div class = "col m12">
-        <img src = "https://images.emedicinehealth.com/images/slideshow/multiple-sclerosis-s1-brain-spinal-cord-nerves.jpg" alt = "MS" width="100%">
+    <div class="row" id="topHeading">
+      <div class="col m12">
+        <img src="https://images.emedicinehealth.com/images/slideshow/multiple-sclerosis-s1-brain-spinal-cord-nerves.jpg" alt="MS"
+          width="100%">
       </div>
     </div>
 
@@ -38,14 +40,15 @@
         <h1 id="headline">MS News</h1>
       </div>
       <div class="col m1">
-        <button id = "push">push me</button>
+        <button id="push">push me</button>
       </div>
-    </div><hr>
-    
-    {{{ body }}}
+    </div>
+     {{{ body }}}
+  </div>
+    <footer> 
+      
+      copyright 2018 S. Young</footer>
 
-    <footer> copyright 2018 S. Young</footer>
-  
 
 </body>
 
@@ -54,17 +57,20 @@
     background: #d8601a;
     width: 100%;
     text-align: center;
-    margin-bottom: 10px;
-    }
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    
+  }
 
-    h1 { 
-      color: #d8671a;
-    }
+  h1 {
+    color: #d8671a;
+  }
 
   #topHeading {
     margin-top: 15px;
-  }  
-
-
+  }
 </style>
+
 </html>
