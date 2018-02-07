@@ -59,17 +59,7 @@ app.get("/scrape", function(req, res) {
 				var result = {};
 				result.title = $(body).find("h3").text();
 				result.link = $(body).children().attr("href");
-					
-				// console.log(result);			
 				
-			// 	// Add the text and href of every link, and save them as properties of the result object
-			// 	result.title = $(this)
-			// 		.children("a")
-			// 		.text();
-			// 	result.link = $(this)
-			// 		.children("a")
-			// 		.attr("href");
-
 					// Create a new Article using the `result` object built from scraping
 					db.Article.create(result)
 						.then(function(dbArticle) {
@@ -82,7 +72,7 @@ app.get("/scrape", function(req, res) {
         });
     });
 
-    // If we were able to successfully scrape and save an Article, send a message to the client
+    // Send a message to the client if successful
     res.send("Scrape Complete");
   });
 });
@@ -92,7 +82,7 @@ app.get("/articles", function(req, res) {
   // Grab every document in the Articles collection
   db.Article.find({})
     // .then(function(dbArticle) {
-    //   // If we were able to successfully find Articles, send them back to the client
+    //   /lkgi/ If we were able to successfully find Articles, send them back to the client
 		// 	res.json(dbArticle);
 			.then(function(dbArticle) {
 				var artObject = {
@@ -112,10 +102,10 @@ app.get("/articles", function(req, res) {
 app.get("/articles/:id", function(req, res) {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
   db.Article.findOne({ _id: req.params.id })
-    // ..and populate all of the notes associated with it
+    // populate all of the notes associated with it
     .populate("note")
     .then(function(dbArticle) {
-      // If we were able to successfully find an Article with the given id, send it back to the client
+      // send it back to the client
       res.json(dbArticle);
     })
     .catch(function(err) {
