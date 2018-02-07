@@ -8,7 +8,7 @@ var NoteSchema = new Schema({
   // title is a string
   title: {
     type: String,
-    body: Text
+    body: String
   }
 });    
 
