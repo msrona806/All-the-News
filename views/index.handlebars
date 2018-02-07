@@ -1,18 +1,28 @@
-  <div class="row">
-    <div class="col m6" id="articles">
-      <p>{{#each articles}} {{this.title}}</p>{{/each}}
+  
+  <div class="col-m-6" id="articles">
+    <div class = "row-s" {{this._id }}>
+      <ul>{{#each Article}}
+   <li id="data-id"{{this._id }}>{{this.title}}<hr></li>
+	 {{/each}}
+   </ul>
     </div>
-    <div class="col m6" id="right">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam dolore nihil distinctio voluptate a perspiciatis cumque
-      officia omnis dolor, neque accusantium nobis recusandae deserunt mollitia!</div>
   </div>
+  <div class="col-m-6" id="right">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam dolore nihil distinctio voluptate a perspiciatis cumque
+    officia omnis dolor, neque accusantium nobis recusandae deserunt mollitia!</div>
+</div>
 
 
 <style>
   #articles {
-    background-color: grey;
+    background-color: #d4926b;
     padding: 5px;
     float: left;
   },
+  
+.row-s {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   #right {
     background-color: pink;
