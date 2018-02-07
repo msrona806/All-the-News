@@ -20,6 +20,7 @@ $(document).on("click", "#row-s", function() {
     url: "/articles/" + thisId
   }).then(function(data) {
     console.log(data);
+<<<<<<< HEAD
   })
 
   // With that done, add the note information to the page
@@ -72,3 +73,8 @@ $.ajax({
 $("#titleinput").val("");
 $("#bodyinput").val("");
 });
+=======
+  });
+
+  fffjfmfmfmfm fmf 
+>>>>>>> d4e8b13cc0ea640f7e8e211807ea269759bfb31a
