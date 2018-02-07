@@ -8,7 +8,8 @@ $.getJSON("/articles", function(data) {
 });
 
 // Whenever someone clicks a p tag
-$(document).on("click", "#row-s", function() {
+$(document).on("click", "li", function() {
+  console.log("id clicked");
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
@@ -20,7 +21,6 @@ $(document).on("click", "#row-s", function() {
     url: "/articles/" + thisId
   }).then(function(data) {
     console.log(data);
-<<<<<<< HEAD
   })
 
   // With that done, add the note information to the page
@@ -73,8 +73,3 @@ $.ajax({
 $("#titleinput").val("");
 $("#bodyinput").val("");
 });
-=======
-  });
-
-  fffjfmfmfmfm fmf 
->>>>>>> d4e8b13cc0ea640f7e8e211807ea269759bfb31a
