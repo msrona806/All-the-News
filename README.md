@@ -1,6 +1,8 @@
 # MS News
 A web app that lets users view and leave comments on the latest news about multiple sclerosis. The app uses scrapping to grab news from the National Multiple Sclerosis Society.
 
+![All-the-News](public/images/news.png)
+
 ### NPM packages used:
 
 	1. [body-parser](https://www.npmjs.com/package/body-parser)
