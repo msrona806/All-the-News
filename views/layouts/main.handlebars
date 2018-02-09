@@ -17,7 +17,7 @@
   <link rel="stylesheet" type="text/css" href="assets/style/style.css"> --}}
 
   <!-- Materialize library -->
-  {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
   <!-- JavaScript for Materialize-->
   {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> --}}
@@ -29,18 +29,22 @@
   <!-- TOP OF THE PAGE -->
   <div class="container">
     <div class="row" id="topHeading">
-      <div class="col m12">
+      <div class="col m8">
         <img src="https://images.emedicinehealth.com/images/slideshow/multiple-sclerosis-s1-brain-spinal-cord-nerves.jpg" alt="MS" class="center"
-          width="50%">
+          width="80%">
+      </div>
+      <div class="col m3" id="notes">
+
       </div>
     </div>
 
     <div class="row">
-      <div class="col m11">
-        <h1 id="headline">MS News</h1>
+
+      <div class="col m10">
+        <h1 id="headline">MS News</h1><button id="goToArticles">View Articles</button>
       </div>
-      <div class="col m1">
-        <button id="push">push me</button>
+      <div class="col m2">
+        
       </div>
     </div>
      {{{ body }}}
@@ -70,6 +74,23 @@
   #topHeading {
     margin-top: 15px;
   }
+   #notes {
+        float: right;
+        width: 30%;
+      }
+      textarea, input {
+        display: block;
+        width: 60%;
+        background-color: #FCF5C7;
+      }
+      input {
+        height: 36px;
+        font-size: 16px;
+      }
+      textarea {
+        height: 150px;
+        font-size: 14px;
+      }
 </style>
 <script src = "app.js"></script>
 </html>
